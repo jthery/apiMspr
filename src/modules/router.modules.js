@@ -1,9 +1,13 @@
 const auth = require('../routes/auth.route');
+const coupon = require('../routes/coupon.route');
 
+// GESTION DES ROUTES PRINCIPALES
 module.exports = app => {
-    console.log('ROUTER MODULE STARTED');
 
     //AUTHENTIFICATION
     app.use('/api', auth);
+
+    // COUPON
+    app.use('/api', coupon);
 
 };
