@@ -26,6 +26,9 @@ app.get('/', (req, res) =>
   res.status(200).send({ message: 'Welcome on MSPR API!' })
 );
 
+// get all roads
+require('./src/modules/router.modules')(app);
+
 // Log Env
 logger.info(`Environment: ${CONFIG.app}`);
 

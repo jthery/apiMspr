@@ -24,4 +24,7 @@ CONFIG.db_name = process.env.DB_NAME;
 CONFIG.db_user = process.env.DB_USER;
 CONFIG.db_password = process.env.DB_PASSWORD;
 
+CONFIG.token_expire = 60 * 60;
+CONFIG.token_status = 'secret';
+
 module.exports = CONFIG;
