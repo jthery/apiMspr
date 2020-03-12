@@ -1,24 +1,33 @@
 # apiMspr
 API de fidélisation de client via un système de couponing.
+l'idée est d'avoir une appliucation où l'utilisateur pourra scanner des QR code & stocker dans son espace client les différents coupons précédemment scannés
 
-# Pour installer l'API
 
-***1er étape :*** Cloner le repository
+##Pre-requisites
+- IDE
+- [NodeJS](https://nodejs.org/en/download/)
 
-***2ieme étape :*** Aller à la racine du projet et taper cette commande :
+## How to start
 
+
+#### 1) Clone repository
+
+open terminal & type:
 ```
-npm install
-```
-
-***3ième étape :*** Un dossier "node_modules" qui contient tous les modules nécessaires au lancement de notre projet est créé.
-
-Lancement de l'API :
-
-```
-npm run local
+$ git clone https://github.com/jthery/apiMspr.git
 ```
 
-Vérifier avec votre naviguateur sur l'URL "localhost:3000" est un message devrait s'afficher :
+#### 2) install project dependencies
+```
+$ cd apiMspr/
+```
+```
+$ npm install
+```
 
-***{"message":"Welcome on MSPR API!"}***
+#### 3) start project
+```
+$ npm run local
+```
+
+open browser on http://localhost:3000
