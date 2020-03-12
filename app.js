@@ -32,6 +32,7 @@ logger.info(`Environment: ${CONFIG.app}`);
 // Sync Database
 if (CONFIG.app === 'local') {
   db.sequelize.sync({ force: true }).then(function () {
+    require('./init_mspr')(db);
     console.log('Sync has been established successfully.');
   }).catch(function (err) {
     console.log('Unable to connect to the database:', err.message);

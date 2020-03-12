@@ -12,7 +12,7 @@ module.exports = (sequelizeModels, Sequelize) => {
                 allowNull: false,
                 type: Sequelize.FLOAT
             },
-            decsription: {
+            description: {
                 type: Sequelize.STRING(255)
             },
             date_debut: {
