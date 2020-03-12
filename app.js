@@ -3,8 +3,15 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
 const CONFIG = require('./src/config/config');
+const db = require('./src/config/db.config');
 
+// winston logger
+const {
+  logger,
+  expressLogger,
+} = require('./src/config/winston.config');
 
+app.use(expressLogger);
 app.use(express.json());
 app.use(express.urlencoded({
   limit: '10mb',
@@ -19,9 +26,21 @@ app.get('/', (req, res) =>
   res.status(200).send({ message: 'Welcome on MSPR API!' })
 );
 
+// Log Env
+logger.info(`Environment: ${CONFIG.app}`);
+
+// Sync Database
+if (CONFIG.app === 'local') {
+  db.sequelize.sync({ force: true }).then(function () {
+    console.log('Sync has been established successfully.');
+  }).catch(function (err) {
+    console.log('Unable to connect to the database:', err.message);
+  });
+}
+
 app.listen(CONFIG.port, () => {
   if (CONFIG.app === 'local') {
-    console.log(`SERVER ON ${CONFIG.port}`);
+    logger.info(`PVC SERVER STARTED ON ${CONFIG.port}`);
   }
 });
 
