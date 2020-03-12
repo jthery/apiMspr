@@ -1,6 +1,6 @@
 const authService = require('../services/auth.service');
 
-
+// GESTION DES ERREURS POUR LA CONNEXION D'UN UTILISATEUR
 exports.login = async (req, res) => {
     try {
         let data = await authService.login(req.body);
@@ -27,7 +27,7 @@ exports.login = async (req, res) => {
     }
 };
 
-
+// GESTION DES ERREURS POUR L'ENREGISTREMENT D'UN UTILISATEUR
 exports.register = async (req, res) => {
     try {
         let data = await authService.register(req.body);

@@ -1,6 +1,6 @@
 const db = require('../config/db.config');
 
-//Find user by Nickname
+//Find user by email
 module.exports.findUser = (email) => {
   return new Promise(async (resolve, reject) => {
     try {

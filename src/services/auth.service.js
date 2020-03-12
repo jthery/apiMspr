@@ -4,6 +4,9 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 
+// PARTIE METIER DE LA CONNEXION AVEC UN UTILISATEUR
+// ON COMPARE LES MOTS DE PASSE
+// UN TOKEN EST CREE
 module.exports.login = (body) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -59,7 +62,9 @@ module.exports.login = (body) => {
 };
 
 
-
+// PARTIE METIER DE L'ENREGISTREMENT D'UN UTILISATEUR
+// VERIFICATION QUE L'EMAIL N'EST PAS DEJA UTILISE
+// LE MOT DE PASSE EST CRYPTE A LA CREATION DU COMPTE
 module.exports.register = (body) => {
     return new Promise(async (resolve, reject) => {
         try {
