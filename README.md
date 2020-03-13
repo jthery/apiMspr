@@ -35,6 +35,7 @@ Modify his identifiers database in "apimspr/.env.local"
 
 DB_USER= youruser
 DB_PASSWORD= yourpassword
+DB_PORT= yourportdatabase
 
 
 #### 4) start project
