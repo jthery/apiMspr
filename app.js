@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express();
 const CONFIG = require('./src/config/config');
 const db = require('./src/config/db.config');
-const db_init = require('./src/db_init/init_database');
 
 // WINSTON LOGGER
 const {
@@ -42,13 +41,10 @@ app.get('/', (req, res) =>
 // Log Env
 logger.info(`Environment: ${CONFIG.app}`);
 
-//Init Database
+// Sync Database
 if (CONFIG.app === 'local') {
-  // Manually create Database if it doesn't already exists because Sequelize don't do it. 
-  db_init.createDbIfNotExists();
-  // Sync Database
   db.sequelize.sync({ force: true }).then(function () {
-    require('./src/db_init/init_database_data')(db);
+    require('./init_mspr')(db);
     logger.info('Sync has been established successfully.');
   }).catch(function (err) {
     logger.info('Unable to connect to the database:', err.message);
@@ -57,7 +53,8 @@ if (CONFIG.app === 'local') {
 
 app.listen(CONFIG.port, () => {
   if (CONFIG.app === 'local') {
-    logger.info(`API SERVER STARTED ON ${CONFIG.port}`);
+    logger.info(`PVC SERVER STARTED ON ${CONFIG.port}`);
   }
 });
+
 module.exports = app;
