@@ -10,7 +10,7 @@ module.exports = function (db) {
         const jeremyMdp = bcrypt.hashSync('jeremy', salt);
 
         userList = [
-            { nom: 'Delaby', prenom: 'Jeremy', email: 'sullivan.delaby@epsi.fr', pwd: sullivanMdp },
+            { nom: 'Delaby', prenom: 'Sullivan', email: 'sullivan.delaby@epsi.fr', pwd: sullivanMdp },
             { nom: 'Moreau', prenom: 'Justine', email: 'justine.moreau@epsi.fr', pwd: justineMdp},
             { nom: 'Thery', prenom: 'Jeremy', email: 'jeremy.thery@epsi.fr', pwd: jeremyMdp}
         ]

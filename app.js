@@ -5,7 +5,7 @@ const app = express();
 const CONFIG = require('./src/config/config');
 const db = require('./src/config/db.config');
 
-// winston logger
+// WINSTON LOGGER
 const {
   logger,
   expressLogger,
@@ -20,8 +20,20 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(cors());
 
+// SWAGGER
+require('./src/config/swagger.config')(app);
+// ROUTES
+require('./src/modules/router.modules')(app);
 
-// check connexion with postman
+/**
+ * @swagger
+ * /:
+ *  get:
+ *    description: Test check api
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ */
 app.get('/', (req, res) =>
   res.status(200).send({ message: 'Welcome on MSPR API!' })
 );
@@ -33,9 +45,9 @@ logger.info(`Environment: ${CONFIG.app}`);
 if (CONFIG.app === 'local') {
   db.sequelize.sync({ force: true }).then(function () {
     require('./init_mspr')(db);
-    console.log('Sync has been established successfully.');
+    logger.info('Sync has been established successfully.');
   }).catch(function (err) {
-    console.log('Unable to connect to the database:', err.message);
+    logger.info('Unable to connect to the database:', err.message);
   });
 }
 
