@@ -13,6 +13,10 @@ const CONFIG = {}; // Make this global to use all over the application
 CONFIG.app = process.env.APP;
 CONFIG.port = process.env.PORT;
 
+CONFIG.log_path = 'log';
+CONFIG.log_level = 'info';
+CONFIG.log_level_exceptions = 'debug';
+
 CONFIG.db_dialect = process.env.DB_DIALECT;
 CONFIG.db_host = process.env.DB_HOST;
 CONFIG.db_port = process.env.DB_PORT;
