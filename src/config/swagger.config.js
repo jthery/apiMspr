@@ -1,5 +1,6 @@
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const CONFIG = require('./config');
 
 
 module.exports = function (app) {
@@ -7,12 +8,12 @@ module.exports = function (app) {
     const swaggerOptions = {
         swaggerDefinition: {
             info: {
-                title: "Mspr API",
+                title: `API ${CONFIG.db_name}`,
                 description: "API de fidélisation de client via un système de couponing.",
                 contact: {
                     name: "Sullivan Delaby, Justine Moreau, Jeremy Thery"
                 },
-                servers: ["http://localhost:3000"]
+                servers: [`http://${CONFIG.db_host}:${CONFIG.db_port}`]
             }
         },
         apis: ['./src/routes/*.js', 'app.js']

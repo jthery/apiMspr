@@ -4,7 +4,8 @@ const cors = require('cors');
 const app = express();
 const CONFIG = require('./src/config/config');
 const db = require('./src/config/db.config');
-const db_init = require('./init_db/init_db')
+const db_init = require('./init_db/init_db');
+
 // WINSTON LOGGER
 const {
   logger,
@@ -56,7 +57,7 @@ if (CONFIG.app === 'local') {
 
 app.listen(CONFIG.port, () => {
   if (CONFIG.app === 'local') {
-    logger.info(`PVC SERVER STARTED ON ${CONFIG.port}`);
+    logger.info(`MSPR SERVER STARTED ON ${CONFIG.port}`);
   }
 });
 
