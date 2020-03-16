@@ -31,7 +31,7 @@ module.exports.login = (body) => {
 
                 if (match === true) {
                     // Génération du token
-                    var newToken = jwt.sign({
+                    const newToken = jwt.sign({
                         email
                     }, CONFIG.token_status, {
                         expiresIn: CONFIG.token_expire
@@ -92,8 +92,8 @@ module.exports.register = (body) => {
                 });
             }
 
-            var salt = bcryptjs.genSaltSync(CONFIG.saltTurns);
-            var hashpwd = bcryptjs.hashSync(pwd, salt);
+            const salt = bcryptjs.genSaltSync(CONFIG.saltTurns);
+            const hashpwd = bcryptjs.hashSync(pwd, salt);
 
             let createUser = userBuilder.createUser(nom, prenom, email, hashpwd);
 

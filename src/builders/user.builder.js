@@ -4,7 +4,7 @@ const db = require('../config/db.config');
 module.exports.findUser = (email) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const result = db.models.User.findOne({
+      const result = await db.models.User.findOne({
         where: {
             email: email
         }
@@ -18,7 +18,7 @@ module.exports.findUser = (email) => {
 
 
 // Create a new user in the database : 
-module.exports.createUser = async (nom, prenom, email, pwd) => {
+module.exports.createUser = (nom, prenom, email, pwd) => {
   return new Promise(async (resolve, reject) => {
     try {
       let result = await db.models.User.create({

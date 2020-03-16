@@ -10,6 +10,6 @@ module.exports.getCoupons = () => {
                 status: 500,
                 message: err
             });
-        };
+        }
     });
 };
