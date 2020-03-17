@@ -1,6 +1,6 @@
 // Express router
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // Controller declaration
 const CouponController = require('../controllers/coupon.controller.js');

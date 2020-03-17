@@ -4,7 +4,7 @@ const db = require('../config/db.config');
 module.exports.findCoupons = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            const result = db.models.Coupon.findAll();
+            const result = await db.models.Coupon.findAll();
             resolve(result);
         } catch (err) {
             reject(err);

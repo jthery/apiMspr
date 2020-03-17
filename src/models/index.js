@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const CONFIG = require('../config/config')
+const CONFIG = require('../config/config');
 
 const sequelize = new Sequelize(
     CONFIG.db_name,
@@ -26,7 +26,7 @@ fs
         return (file.indexOf('.') !== 0) && (file !== 'index.js');
     })
     .forEach(function (file) {
-        var model = sequelize.import(path.join(__dirname, file));
+        const model = sequelize.import(path.join(__dirname, file));
         db[model.name] = model;
     });
 

@@ -16,8 +16,8 @@ let mysqlCon = mysql2.createConnection({
 
 module.exports.createDbIfNotExists = () => {
     try {
-        mysqlCon.query('CREATE DATABASE IF NOT EXISTS ' + dbName + ";");
+        mysqlCon.query('CREATE DATABASE IF NOT EXISTS ' + dbName + ';');
     } catch (err) {
         logger.error(err);
     }
-}
+};

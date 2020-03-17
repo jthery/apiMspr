@@ -26,7 +26,7 @@ module.exports = (sequelizeModels, Sequelize) => {
                 type: Sequelize.STRING(255)
             }
         }, {
-            tableName: "user",
+            tableName: 'user',
             timestamps: false,
             freezeTableName: true,
         }
@@ -38,7 +38,7 @@ module.exports = (sequelizeModels, Sequelize) => {
             foreignKey: 'USER_id',
             timestamps: false
         });
-    }
+    };
     
     return user;
 };

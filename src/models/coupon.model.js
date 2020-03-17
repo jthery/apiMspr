@@ -22,7 +22,7 @@ module.exports = (sequelizeModels, Sequelize) => {
                 type: Sequelize.DATE
             }
         }, {
-            tableName: "coupon",
+            tableName: 'coupon',
             timestamps: false,
             freezeTableName: true,
         }

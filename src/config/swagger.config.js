@@ -9,9 +9,9 @@ module.exports = function (app) {
         swaggerDefinition: {
             info: {
                 title: `API ${CONFIG.db_name}`,
-                description: "API de fidélisation de client via un système de couponing.",
+                description: 'API de fidélisation de client via un système de couponing.',
                 contact: {
-                    name: "Sullivan Delaby, Justine Moreau, Jeremy Thery"
+                    name: 'Sullivan Delaby, Justine Moreau, Jeremy Thery'
                 },
                 servers: [`http://${CONFIG.db_host}:${CONFIG.db_port}`]
             }
@@ -20,6 +20,6 @@ module.exports = function (app) {
     };
 
     const swaggerDocs = swaggerJsDoc(swaggerOptions);
-    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-}
+};
