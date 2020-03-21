@@ -55,7 +55,7 @@ if (CONFIG.app === 'local') {
     require('./init_db/init_db_data')(db);
     logger.info('Sync has been established successfully.');
   }).catch(function (err) {
-    logger.info('Unable to connect to the database:', err.message);
+    logger.error(err.message);
   });
 }
 
