@@ -9,15 +9,18 @@ module.exports = (sequelizeModels, Sequelize) => {
                 unique: true,
             },
             discount: {
+                allowNull: false,
                 type: Sequelize.FLOAT
             },
             description: {
                 type: Sequelize.STRING(255)
             },
             date_debut: {
+                allowNull: false,
                 type: Sequelize.DATE
             },
             date_fin: {
+                allowNull: false,
                 type: Sequelize.DATE
             }
         }, {

@@ -36,9 +36,7 @@ require('./src/modules/router.modules')(app);
  *        description: A successful response
  */
 app.get('/', (req, res) =>
-  res.status(200).send({
-    message: 'Welcome on MSPR API!'
-  })
+  res.status(200).json('Welcome on MSPR API!')
 );
 
 // Log Env
