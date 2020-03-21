@@ -9,7 +9,6 @@ module.exports = (sequelizeModels, Sequelize) => {
                 unique: true,
             },
             discount: {
-                allowNull: false,
                 type: Sequelize.FLOAT
             },
             description: {

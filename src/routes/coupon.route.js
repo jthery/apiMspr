@@ -18,5 +18,30 @@ const CouponController = require('../controllers/coupon.controller.js');
  */ 
 router.get('/coupons', CouponController.getCoupons);
 
+/**
+ * @swagger
+ *
+ * /api/coupon:
+ *   post:
+ *     description: add coupon to user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: userId
+ *         description: id user to add for a coupon.
+ *         in: formData
+ *         required: true
+ *         type: number
+ *       - name: couponId
+ *         description: add coupon id.
+ *         in: formData
+ *         required: true
+ *         type: number
+ *     responses:
+ *       200:
+ *         description: add coupon to user has been established successfully
+ */
+router.post('/coupon', CouponController.coupon);
+
 // Export routes
 module.exports = router;

@@ -11,3 +11,17 @@ module.exports.findCoupons = () => {
         }
     });
 };
+
+module.exports.coupon = (userId, couponId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const result = await db.models.User_coupon.create({
+                COUPON_id: couponId,
+                USER_id: userId
+            });
+            resolve(result);
+        } catch (err) {
+            reject(err);
+        }
+    });
+};
