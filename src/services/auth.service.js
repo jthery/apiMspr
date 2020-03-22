@@ -107,3 +107,22 @@ module.exports.register = (body) => {
         }
     });
 };
+
+module.exports.findUserByEmail = (body) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const {
+                email
+            } = body;
+
+            const userByEmail = await userBuilder.findUser(email);
+
+            resolve(userByEmail);
+        } catch (err) {
+            reject({
+                status: 500,
+                message: err
+            });
+        }
+    });
+};
