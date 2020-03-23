@@ -65,5 +65,7 @@ router.post('/login', AuthController.login);
  */
 router.post('/register', AuthController.register);
 
+router.get('/user', AuthController.findUserByEmail);
+
 // Export routes
 module.exports = router;

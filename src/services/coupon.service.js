@@ -13,3 +13,23 @@ module.exports.getCoupons = () => {
         }
     });
 };
+
+module.exports.coupon = (body) => {
+    return new Promise((resolve, reject) => {
+        try {
+            const {
+                userId,
+                couponId
+            } = body;
+
+            const coupon = couponBuilder.coupon(userId, couponId);
+            
+            resolve(coupon);
+        } catch (err) {
+            reject({
+                status: 500,
+                message: err
+            });
+        }
+    });
+};
