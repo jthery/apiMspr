@@ -26,17 +26,9 @@ require('./src/config/swagger.config')(app);
 // ROUTES
 require('./src/modules/router.modules')(app);
 
-/**
- * @swagger
- * /:
- *  get:
- *    description: Test check api
- *    responses:
- *      '200':
- *        description: A successful response
- */
+// redirect to /api-docs Swagger
 app.get('/', (req, res) =>
-  res.status(200).json('Welcome on MSPR API!')
+  res.redirect('api-docs')
 );
 
 // Log Env
