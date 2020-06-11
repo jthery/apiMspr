@@ -6,7 +6,12 @@ module.exports = (sequelizeModels, Sequelize) => {
                 allowNull: false,
                 primaryKey: true,
                 autoIncrement: true,
-                unique: true,
+                unique: true
+            },
+            code_coupon: {
+                allowNull: false,
+                type: Sequelize.STRING(255),
+                unique: true
             },
             discount: {
                 allowNull: false,
