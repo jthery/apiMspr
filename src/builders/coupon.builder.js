@@ -12,12 +12,13 @@ module.exports.findCoupons = () => {
     });
 };
 
-module.exports.coupon = (userId, couponId) => {
+module.exports.findCoupon = (code_coupon) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const result = await db.models.User_coupon.create({
-                COUPON_id: couponId,
-                USER_id: userId
+            const result = await db.models.Coupon.findOne({
+                where: {
+                    code_coupon: code_coupon
+                }
             });
             resolve(result);
         } catch (err) {
@@ -25,3 +26,18 @@ module.exports.coupon = (userId, couponId) => {
         }
     });
 };
+
+// A REVOIR
+// module.exports.couponToUser = (userId, code_coupon) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             const result = await db.models.User_coupon.create({
+//                 USER_id: userId,
+//                 COUPON_id: code_coupon
+//             });
+//             resolve(result);
+//         } catch (err) {
+//             reject(err);
+//         }
+//     });
+// };

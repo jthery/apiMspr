@@ -7,7 +7,7 @@ const CouponController = require('../controllers/coupon.controller.js');
 
 /**
  * @swagger
- * /api/coupons:
+ * /coupons:
  *   get:
  *     description: Returns coupons
  *     produces:
@@ -18,6 +18,20 @@ const CouponController = require('../controllers/coupon.controller.js');
  */ 
 router.get('/coupons', CouponController.getCoupons);
 
+/**
+ * @swagger
+ * /coupon:
+ *   get:
+ *     description: Returns coupon
+ *     produces:
+ *      - application/json
+ *     responses:
+ *       200:
+ *         description: coupon
+ */
+router.get('/couponByCodeCoupon', CouponController.getCouponByCodeCoupon);
+
+// A REVOIR
 /**
  * @swagger
  *
@@ -41,7 +55,7 @@ router.get('/coupons', CouponController.getCoupons);
  *       200:
  *         description: add coupon to user has been established successfully
  */
-router.post('/coupon', CouponController.coupon);
+// router.post('/couponToUser', CouponController.couponToUser);
 
 // Export routes
 module.exports = router;
