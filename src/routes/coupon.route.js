@@ -35,7 +35,7 @@ router.get('/couponByCodeCoupon', CouponController.getCouponByCodeCoupon);
 /**
  * @swagger
  *
- * /api/coupon:
+ * /couponToUser:
  *   post:
  *     description: add coupon to user (NE FONCTIONNE PAS POUR LE MOMENT)
  *     produces:
