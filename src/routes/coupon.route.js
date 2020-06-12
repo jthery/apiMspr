@@ -20,7 +20,7 @@ router.get('/coupons', CouponController.getCoupons);
 
 /**
  * @swagger
- * /coupon:
+ * /couponByCodeCoupon:
  *   get:
  *     description: Returns coupon
  *     produces:
@@ -37,7 +37,7 @@ router.get('/couponByCodeCoupon', CouponController.getCouponByCodeCoupon);
  *
  * /api/coupon:
  *   post:
- *     description: add coupon to user
+ *     description: add coupon to user (NE FONCTIONNE PAS POUR LE MOMENT)
  *     produces:
  *       - application/json
  *     parameters:
