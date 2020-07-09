@@ -8,7 +8,7 @@ const AuthController = require('../controllers/auth.controller.js');
 /**
  * @swagger
  *
- * /api/login:
+ * /login:
  *   post:
  *     description: Login to the application
  *     produces:
@@ -33,7 +33,7 @@ router.post('/login', AuthController.login);
 /**
  * @swagger
  *
- * /api/register:
+ * /register:
  *   post:
  *     description: Register to the application
  *     produces:
