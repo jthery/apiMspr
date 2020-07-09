@@ -11,7 +11,7 @@ exports.getCoupons = async (req, res) => {
 
 exports.getCouponByCodeCoupon = async (req, res) => {
     try {
-        let data = await couponService.getCouponByCodeCoupon(req.body.code_coupon);
+        let data = await couponService.getCouponByCodeCoupon(req.query.code_coupon);
         return res.status(200).json(data);
     } catch (err) {
         return res.status(err).send(err.message);
