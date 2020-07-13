@@ -25,6 +25,12 @@ router.get('/coupons', CouponController.getCoupons);
  *     description: Returns coupon
  *     produces:
  *      - application/json
+ *     parameters:
+ *       - in: query
+ *         name : code_coupon
+ *         description: get coupon by Code coupon.
+ *         required: true
+ *         type: string
  *     responses:
  *       200:
  *         description: coupon
