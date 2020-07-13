@@ -4,9 +4,9 @@ module.exports = (sequelizeModels, Sequelize) => {
             userId: {
                 type: Sequelize.INTEGER(11),
                 allowNull: false,
-                primaryKey: true,
                 autoIncrement: true,
-                unique: true,
+                primaryKey: true,
+                unique: true
             },
             nom: {
                 allowNull: false,

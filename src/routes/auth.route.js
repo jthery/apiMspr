@@ -8,7 +8,7 @@ const AuthController = require('../controllers/auth.controller.js');
 /**
  * @swagger
  *
- * /api/login:
+ * /login:
  *   post:
  *     description: Login to the application
  *     produces:
@@ -33,7 +33,7 @@ router.post('/login', AuthController.login);
 /**
  * @swagger
  *
- * /api/register:
+ * /register:
  *   post:
  *     description: Register to the application
  *     produces:
@@ -65,7 +65,24 @@ router.post('/login', AuthController.login);
  */
 router.post('/register', AuthController.register);
 
-router.get('/user', AuthController.findUserByEmail);
+// /**
+//  * @swagger
+//  * /findUserByEmail:
+//  *   get:
+//  *     description: Return user by email
+//  *     produces:
+//  *      - application/json
+//  *     parameters:
+//  *       - name: email
+//  *         description: email name.
+//  *         in: formData
+//  *         required: true
+//  *         type: string
+//  *     responses:
+//  *       200:
+//  *         description: user by email
+//  */
+// router.get('/findUserByEmail', AuthController.findUserByEmail);
 
 // Export routes
 module.exports = router;
