@@ -1,14 +1,15 @@
+const CONFIG = require('../src/config/config');
 const expect = require('chai').expect;
 const supertest = require('supertest');
 
 api = supertest('http://localhost:3000');
 
 
-describe('route principale /api', function () {
+describe('Tests concernant les coupons', function () {
 
-    describe('TESTS des coupons', function () {
-        it('Vérifie qu\'il y a chaque propriété pour le get /coupons', function (done) {
-            api.get('/api/coupons')
+    describe('return get coupons', function () {
+        it('Vérifie qu\'il y a chaque propriété pour le get /coupons', function () {
+            api.get(`${CONFIG.uri_prefix_main}/coupons`)
                 .expect(200)
                 .end(function (err, res) {
                     expect(res.status).to.equal(200);
@@ -17,7 +18,6 @@ describe('route principale /api', function () {
                     expect(res.body[0]).to.have.property('description');
                     expect(res.body[0]).to.have.property('date_debut');
                     expect(res.body[0]).to.have.property('date_fin');
-                    done();
                 });
         });
     });
