@@ -57,7 +57,7 @@ module.exports.login = (body) => {
                 status: 500,
                 message: err
             });
-        };
+        }
     });
 };
 
